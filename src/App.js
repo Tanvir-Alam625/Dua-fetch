@@ -5,25 +5,20 @@ import Home from "./components/Home/Home"
 import Setting from "./components/Setting/Setting"
 
 function App() {
-  const [category,setCategory]=useState(null);
-  useEffect(()=>{
-    const getCategory = async () =>{
-      const res = await fetch(`https://dua-backend.herokuapp.com/dua-main/category`)
-      const data = await res.json()
-      await setCategory(data?.result)
-      console.log(data);
-    } 
-    getCategory();
-
-  },[])
+  // const [category,setCategory]=useState(null);
+  // // const [dua,setDua]=useState(null);
  
+  // // console.log(dua);
+  // const getCategory = () =>{
+  //   fetch(`https://dua-backend.herokuapp.com/dua-main/category`).then(res=>res.json()).then(data=> setCategory(data?.result))
+
+  // } 
+  // getCategory();
+
+  
   return (
-    <div className="h-[100vh] w-full app">
-      {
-        category && <Category category={category}/>
-      }
+    <div className="h-[100vh] w-full">
       <Home />
-      <Setting />
     </div>
   );
 }
